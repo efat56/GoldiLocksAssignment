@@ -1,0 +1,27 @@
+package com.goldilocks.service;
+
+import java.util.Scanner;
+
+import com.goldilocks.model.Employee;
+
+public class EmpServiceImplementation implements EmpService {
+	private final EmployeeRepository employeeRepository;
+
+    @Autowired
+    public EmpServiceImplementation(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
+
+    @Override
+    public List<Employee> getAllEmployees() {
+        return employeeRepository.findAll();
+    }
+
+    @Override
+    public Employee createEmployee(String empName, int empAge) {
+        Employee employee = new Employee();
+        employee.setEmpName(empName);
+        employee.setEmpAge(empAge);
+        return employeeRepository.save(employee);
+    }
+}

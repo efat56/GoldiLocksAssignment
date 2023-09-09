@@ -1,0 +1,5 @@
+package com.goldilocks.model;
+
+public class Emoloyee {
+
+}

@@ -1,0 +1,10 @@
+package com.goldilocks.service;
+
+import com.goldilocks.model.Employee;
+
+public interface EmpService {
+//	public Employee setEmpdetails(Employee emp);
+//	public Employee getEmpDetails(String param);
+//	
+
+}

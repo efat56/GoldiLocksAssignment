@@ -1,0 +1,25 @@
+package com.goldilocks.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.goldilocks.repo.EmpRepo;
+
+@RestController
+public class MyController {
+	
+	
+	private final EmpRepo emprepo;
+
+    @Autowired
+    public MyController(EmpRepo emprepo) {
+        this.emprepo = emprepo;
+    }
+
+    @GetMapping
+    public List<Empl> getAllEmployees() {
+        return employeeRepository.findAll();
+    }
+
+}

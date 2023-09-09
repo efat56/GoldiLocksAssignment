@@ -1,0 +1,16 @@
+package com.goldilocks.repo;
+
+import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+
+import com.goldilocks.model.Employee;
+
+import jakarta.persistence.EntityManager;
+
+public class EmpRepo extends SimpleJpaRepository<Employee, Integer> {
+
+	public EmpRepo(Class<Employee> domainClass, EntityManager em) {
+		super(domainClass, em);
+		// TODO Auto-generated constructor stub
+	}
+
+}
