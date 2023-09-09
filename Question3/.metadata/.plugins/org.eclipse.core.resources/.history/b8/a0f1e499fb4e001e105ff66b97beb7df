@@ -1,0 +1,64 @@
+package Question3;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter Employee Name....");
+		String name = sc.next();
+		
+		System.out.println("Enter Employee Age....");
+		int age = sc.nextInt();
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String url = "jdbc:mysql://localhost:3306/db_goldilocks";
+		
+		
+		try(Connection conn =   DriverManager.getConnection(url, "root", "efat@0786")) {
+			
+		PreparedStatement ps = 	conn.prepareStatement("insert into test values(?,?)");
+		
+		ps.setString(1,name);
+		ps.setInt(2, age);
+		
+		int x= ps.executeUpdate();	
+		 
+		if(x > 0)
+			System.out.println("Record Inserted Sucessfully");
+		else
+			System.out.println("Not inserted...");
+			
+			
+			
+			
+			
+			
+//			if(conn != null) {
+//				System.out.println("connected....");
+//			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+		
+
+
+	}
+
+}

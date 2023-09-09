@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\fool\OneDrive\Desktop\AssignmentGoldiLocks\Question3\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+3629813240.index
+2645258775.index
