@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Log In</h2>
+        <form class="login-form">
+            <input id="username" type="text" name="username" placeholder="Username" required>
+            <input id="password" type="password" name="password" placeholder="Password" required>
+            <button type="button" onclick="validateCredentials()">Login</button>
+        </form>
+        <p id="login-message"></p>
+    </div>
+</body>
+</html>
+<script>
+    let users = {
+        "ksubham789@gmail.com": "1234",
+        "ksubham@gmail.com": "1234",
+        "Iam789@gmail.com": "1234"
+    }
+
+    function validateCredentials() {
+        event.preventDefault();
+        console.log("Hello")
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        let isLoggedIn = false;
+
+        for (let user in users) {
+            if (user == username) {
+                if (users[user] == password) {
+                    document.getElementById("login-message").textContent = "Login successful!";
+                    isLoggedIn = true;
+                } else {
+                    document.getElementById("login-message").textContent = "Login Failed!";
+                }
+            }
+        }
+
+        if (!isLoggedIn) {
+            alert("Wrong username or password");
+        }
+    }
+</script>
