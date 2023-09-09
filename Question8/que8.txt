@@ -1,0 +1,2 @@
+
+mysql> select * from test where emp_age < 30 AND emp_name like 's%';
